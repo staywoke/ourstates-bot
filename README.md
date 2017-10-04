@@ -1,7 +1,7 @@
 OurStates Chat Bot
 ===
 
-[![Build Status](https://circleci.com/gh/staywoke/ourstates-bot/tree/master.svg?style=shield)](https://circleci.com/gh/staywoke/ourstates-bot/tree/master) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://raw.githubusercontent.com/staywoke/ourstates-bot/master/LICENSE)  [![GitHub contributors](https://img.shields.io/github/contributors/staywoke/ourstates-bot.svg)](https://github.com/staywoke/ourstates-bot/graphs/contributors)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://raw.githubusercontent.com/staywoke/ourstates-bot/master/LICENSE)  [![GitHub contributors](https://img.shields.io/github/contributors/staywoke/ourstates-bot.svg)](https://github.com/staywoke/ourstates-bot/graphs/contributors)
 
 #### NOTE: This Project is Not Currently Functional
 
