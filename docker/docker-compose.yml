@@ -1,0 +1,51 @@
+version: '2'
+services:
+    applications:
+        image: tianon/true
+        volumes:
+            - ../:/var/www
+    ourstatesbot:
+        build:
+            context: ./ourstatesbot
+        volumes_from:
+            - applications
+        extra_hosts:
+            - "dockerhost:10.0.75.1"
+        ports:
+           - "2222:22"
+        tty: true
+    php-fpm:
+        build:
+            context: ./php-fpm
+        volumes_from:
+            - applications
+        expose:
+            - "9000"
+        links:
+            - ourstatesbot
+        extra_hosts:
+            - "dockerhost:10.0.75.1"
+    nginx:
+        build:
+            context: ./nginx
+            args:
+                - PHP_UPSTREAM=php-fpm
+        volumes_from:
+            - applications
+        volumes:
+            - ./logs/nginx/:/var/log/nginx
+            - ./nginx/sites/:/etc/nginx/sites-available
+        ports:
+            - "80:80"
+            - "443:443"
+        links:
+            - php-fpm
+    redis:
+        build: ./redis
+        volumes:
+            - redis:/data
+volumes:
+    redis:
+        driver: "local"
+    sessions:
+        driver: "local"
